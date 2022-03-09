@@ -139,10 +139,6 @@ class Home extends Component<PropsType, StateType> {
     api
       .getCanCreateProject("<token>", {}, {})
       .then((res) => {
-        if (res.status === 403) {
-          this.context.setCanCreateProject(false);
-          return;
-        }
         this.context.setCanCreateProject(true);
       })
       .catch((err) => {
